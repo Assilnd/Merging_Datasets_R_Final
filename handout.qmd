@@ -180,9 +180,6 @@ Include more datasets (e.g., performance data) Explore mismatched joins Handle d
 # Conclusion
 
 This project showed how to combine datasets using dplyr joins in R. We practiced left_join() and inner_join(), and demonstrated data exploration and visualization techniques. These tools are powerful for preparing data in real-world projects.
-
-# References
-
 \newpage
 
 # Affidavit
@@ -226,4 +223,6 @@ Checklist:
 \[X]The link to the presentation and the handout published on GitHub.
 
 \[Assil Noureddine,\] \[11 june 2025,\] \[Kôln\]
+
+# References
 

@@ -177,10 +177,6 @@ The key is to understand your data structure, clean your keys, and apply the app
 
 \newpage
 
-# References
-
-\newpage
-
 # Affidavit
 
 I hereby affirm that this submitted paper was authored unaided and solely by me. Additionally, no other sources than those in the reference list were used. Parts of this paper, including tables and figures, that have been taken either verbatim or analogously from other works have in each case been properly cited with regard to their origin and authorship. This paper either in parts or in its entirety, be it in the same or similar form, has not been submitted to any other examination board and has not been published.
@@ -222,3 +218,7 @@ Checklist:
 \[X]The link to the presentation and the handout published on GitHub.
 
 \[Assil Noureddine,\] \[11 june 2025,\] \[Kôln\]
+
+# References
+
+
