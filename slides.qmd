@@ -1,0 +1,158 @@
+---
+title: "Merging Datasets Using R"
+author: "Assil NOUREDDINE"
+email: "noureddine.assil@stud.hs-fresenius.de"
+matriculation-number: "400924750"
+date: "11 June 2025"
+format:
+  html: default
+  pdf: default
+bibliography: references.bib
+csl: apa.csl
+---
+
+# Welcome
+
+## Merging Datasets Using R  
+👩‍💻 Assil NOUREDDINE  
+📧 noureddine.assil@stud.hs-fresenius.de  
+📅 11 June 2025
+
+---
+
+# Agenda
+
+1. Why merge datasets?  
+2. Join types in R  
+3. Tidyverse tools  
+4. Hands-on examples  
+5. Best practices  
+6. Summary & References
+
+---
+
+# Why Merge Datasets?
+
+- Data is often stored in multiple tables  
+- Combining them gives more insights  
+- Example: Employee data + Salary data [@wickham2023dplyr]
+
+---
+
+# Case Study
+
+### Example CSVs:
+
+**employees.csv**
+
+| employee_id | name    | department |
+|-------------|---------|------------|
+| 1           | Alice   | HR         |
+| 2           | Bob     | IT         |
+| 3           | Charlie | Finance    |
+
+**salaries.csv**
+
+| employee_id | salary |
+|-------------|--------|
+| 2           | 60000  |
+| 3           | 55000  |
+
+---
+
+# Join Types in R
+
+| Join        | Description                        |
+|-------------|------------------------------------|
+| `inner`     | Only matching keys in both tables  |
+| `left`      | All rows from left + matches       |
+| `full`      | All rows from both                 |
+| `anti`      | Only rows from left, not in right  |
+
+[@wickham2023dplyr]
+
+---
+
+# Load the Tools
+
+```{r}
+library(tidyverse)
+
+employees <- read_csv("Data/employees.csv")
+salaries <- read_csv("Data/salaries.csv")
+
+```
+---
+# Example 
+
+inner_join(): 
+
+```{r}
+inner_join(employees, salaries, by = "employee_id")
+```
+
+Only includes matches
+--- 
+
+left_join():
+
+```{r}
+left_join(employees, salaries, by = "employee_id")
+```
+
+Includes all employees
+Adds salary where available
+
+--- 
+
+anti_join():
+```{r}
+anti_join(employees, salaries, by = "employee_id")
+```
+Helps find records in employees not matched in salaries
+
+---
+
+# Visualizing with ggplot2
+
+```{r}
+left_merged <- left_join(employees, salaries, by = "employee_id")
+
+ggplot(left_merged, aes(x = department, y = salary)) +
+  geom_col(na.rm = TRUE) +
+  labs(title = "Salaries by Department")
+```
+---
+
+# Common Issues
+
+- Duplicated keys — use distinct()
+- A values — check with anti_join()
+- Column type mismatch — fix with as.character() or as.numeric()
+- Performance — consider data.table for large data [@rteam2025base]
+
+---
+
+# Best Practices
+
+- Clean your data first
+- Always check join output
+- Document your steps
+- Visualize where possible
+- Cite your packages and sources [@apa2020manual]
+
+---
+
+# Summary
+
+- Joins help combine useful data
+- Different joins serve different purposes
+- Tidyverse makes merging easier
+- Joins + ggplot = insights!
+
+---
+
+# References
+
+
+
