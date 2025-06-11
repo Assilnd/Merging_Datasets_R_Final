@@ -20,8 +20,6 @@ noureddine.assil@stud.hs-fresenius.de
 
 # Abstract
 
-We use fictional employee and salary datasets to demonstrate `left_join()` and `inner_join()`, and visualize the results.
-
 In data science and statistical analysis, combining data from multiple sources is a foundational skill. Real-world data is often distributed across different files, databases, or formats, and meaningful insights usually require integration of these sources. This process—known as merging datasets—involves aligning and joining tables using shared identifiers or keys.
 
 In this handout, we focus on the R programming language, specifically the tidyverse ecosystem, to demonstrate how merging is conducted in a tidy and reproducible manner. We explore the theory behind data joins, types of merges, syntax using dplyr, and common challenges analysts face. By the end, readers will understand how to use joins in R to clean, enrich, and structure data for analysis in real-world projects.
@@ -44,7 +42,9 @@ You might have multiple datasets:
 
 -   One contains customer info
 -   Another contains sales
--   A third contains survey responses To analyze customer behavior, you must merge these datasets using a common column such as customer_id [@r4ds2016].
+-   A third contains survey responses 
+
+To analyze customer behavior, you must merge these datasets using a common column such as customer_id [@r4ds2016].
 
 # Types of datasets
 
@@ -155,17 +155,19 @@ full_merged
 
 -   Duplicate keys: If either dataset has duplicate IDs, merges may produce unexpected duplicates.
 -   Mismatched types: Merging fails if key columns are not of the same type (e.g., one numeric, one character).
--   Missing values: NA keys won't match anything—be cautious.
+-   Missing values: NA keys won't match anything.
 -   Wrong join direction: Choose the correct “left” and “right” dataset based on which one you want to keep completely.
 -   Name collisions: If both datasets have a column with the same name (but different content), R will append .x and .y—which can be confusing [@r4ds2016].
 
 # Discussion
 
--   Merging is not just a technical task. It helps:
+Merging is not just a technical task. It helps:
 
 -   Find relationships between datasets
 
--   Spot missing information Combine different perspectives (e.g., personal data + performance)
+-   Spot missing information 
+
+-   Combine different perspectives (e.g., personal data + performance)
 
 In big data or research, merging allows you to build a full picture by joining datasets from surveys, sensors, websites, or government data [@wickham2014tidy],[@r4ds2016].
 

@@ -138,7 +138,6 @@ noureddine.assil@stud.hs-fresenius.de
 </div>
 <section id="abstract" class="level1">
 <h1>Abstract</h1>
-<p>We use fictional employee and salary datasets to demonstrate <code>left_join()</code> and <code>inner_join()</code>, and visualize the results.</p>
 <p>In data science and statistical analysis, combining data from multiple sources is a foundational skill. Real-world data is often distributed across different files, databases, or formats, and meaningful insights usually require integration of these sources. This process—known as merging datasets—involves aligning and joining tables using shared identifiers or keys.</p>
 <p>In this handout, we focus on the R programming language, specifically the tidyverse ecosystem, to demonstrate how merging is conducted in a tidy and reproducible manner. We explore the theory behind data joins, types of merges, syntax using dplyr, and common challenges analysts face. By the end, readers will understand how to use joins in R to clean, enrich, and structure data for analysis in real-world projects.</p>
 <div style="page-break-after: always;"></div>
@@ -156,8 +155,9 @@ noureddine.assil@stud.hs-fresenius.de
 <ul>
 <li>One contains customer info</li>
 <li>Another contains sales</li>
-<li>A third contains survey responses To analyze customer behavior, you must merge these datasets using a common column such as customer_id <span class="citation" data-cites="r4ds2016">(<a href="#ref-r4ds2016" role="doc-biblioref">Wickham &amp; Grolemund, 2016</a>)</span>.</li>
+<li>A third contains survey responses</li>
 </ul>
+<p>To analyze customer behavior, you must merge these datasets using a common column such as customer_id <span class="citation" data-cites="r4ds2016">(<a href="#ref-r4ds2016" role="doc-biblioref">Wickham &amp; Grolemund, 2016</a>)</span>.</p>
 </section>
 <section id="types-of-datasets" class="level1">
 <h1>Types of datasets</h1>
@@ -351,17 +351,18 @@ noureddine.assil@stud.hs-fresenius.de
 <ul>
 <li>Duplicate keys: If either dataset has duplicate IDs, merges may produce unexpected duplicates.</li>
 <li>Mismatched types: Merging fails if key columns are not of the same type (e.g., one numeric, one character).</li>
-<li>Missing values: NA keys won’t match anything—be cautious.</li>
+<li>Missing values: NA keys won’t match anything.</li>
 <li>Wrong join direction: Choose the correct “left” and “right” dataset based on which one you want to keep completely.</li>
 <li>Name collisions: If both datasets have a column with the same name (but different content), R will append .x and .y—which can be confusing <span class="citation" data-cites="r4ds2016">(<a href="#ref-r4ds2016" role="doc-biblioref">Wickham &amp; Grolemund, 2016</a>)</span>.</li>
 </ul>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
+<p>Merging is not just a technical task. It helps:</p>
 <ul>
-<li><p>Merging is not just a technical task. It helps:</p></li>
 <li><p>Find relationships between datasets</p></li>
-<li><p>Spot missing information Combine different perspectives (e.g., personal data + performance)</p></li>
+<li><p>Spot missing information</p></li>
+<li><p>Combine different perspectives (e.g., personal data + performance)</p></li>
 </ul>
 <p>In big data or research, merging allows you to build a full picture by joining datasets from surveys, sensors, websites, or government data <span class="citation" data-cites="wickham2014tidy">(<a href="#ref-wickham2014tidy" role="doc-biblioref">Wickham, 2014</a>)</span>,<span class="citation" data-cites="r4ds2016">(<a href="#ref-r4ds2016" role="doc-biblioref">Wickham &amp; Grolemund, 2016</a>)</span>.</p>
 </section>
